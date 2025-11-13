@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JM Tienda Virtual</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">🔎 JM Tienda Virtual</div>
+    <div class="menu">
+      <div class="menu-item" onclick="openPujas()">Mis pujas</div>
+      <div class="menu-item">Alertas</div>
+      <div class="menu-item" onclick="openLogin()">Acceder</div>
+    </div>
+  </header>
+
+  <h1>Subastas activas hoy</h1>
+
+  <div class="container">
+    <p>Explora piezas únicas y sé parte de pujas en tiempo real desde cualquier lugar.<br />JM Tienda Virtual conecta a coleccionistas y vendedores con experiencias premium y seguras.</p>
+
+    <div class="features">
+      <div class="card">
+        <h3>⚡ Tiempo real</h3>
+        Accede a pujas instantáneas con actualizaciones sincronizadas.
+      </div>
+      <div class="card">
+        <h3>🔒 Seguro y exclusivo</h3>
+        Autenticación verificada y roles claros para proteger cada subasta.
+      </div>
+    </div>
+
+    <div class="section-box">
+      <h2>🔐 Solo para miembros registrados</h2>
+      <p>Crea tu cuenta o inicia sesión para descubrir subastas activas, seguir tu historial y recibir alertas.</p>
+      <a href="#" class="btn" onclick="openLogin()">Acceder ahora</a>
+    </div>
+
+    <div class="how">
+      <h2>¿Cómo funciona?</h2>
+
+      <div class="step">
+        <b>1. Crea tu cuenta</b><br />Regístrate como comprador o vendedor para acceder al catálogo completo.
+      </div>
+
+      <div class="step">
+        <b>2. Explora y guarda tus favoritos</b><br />Filtra por categorías, recibe notificaciones y sigue tus piezas favoritas.
+      </div>
+
+      <div class="step">
+        <b>3. Pujar es inmediato</b><br />Participa en tiempo real con pasarelas de pago seguras y confirmaciones instantáneas.
+      </div>
+
+      <div class="step">
+        <i>¿Eres vendedor? Activa tu perfil y comienza a listar tus piezas con visibilidad destacada.</i>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-bg" id="modalPujas">
+    <div class="modal">
+      <h2>Mis pujas</h2>
+      <p>No has realizado pujas todavía.</p>
+      <button class="btn" onclick="closePujas()">Cerrar</button>
+    </div>
+  </div>
+
+  <div class="modal-bg" id="modalLogin">
+    <div class="modal" id="loginBox">
+      <h2>Iniciar sesión</h2>
+      <input class="input" placeholder="Correo" />
+      <input class="input" placeholder="Contraseña" type="password" />
+      <button class="btn" style="width:100%">Entrar</button>
+      
+      <button class="btn" style="width:100%; margin-top:10px" onclick="loginWithGoogle()">
+  Continuar con Google
+</button>
+
+      <p onclick="goRegister()" style="cursor:pointer; margin-top:10px">Crear cuenta</p>
+      <button class="btn" onclick="closeLogin()" style="margin-top:10px; width:100%">Cerrar</button>
+    </div>
+
+    <div class="modal" id="registerBox" style="display:none">
+      <h2>Crear cuenta</h2>
+      <input class="input" placeholder="Nombre de usuario" />
+      <input class="input" placeholder="Correo" />
+      <input class="input" placeholder="Contraseña" type="password" />
+      <select class="input">
+        <option>Comprador</option>
+        <option>Vendedor</option>
+      </select>
+      <button class="btn" style="width:100%">Registrar</button>
+      <p onclick="goLogin()" style="cursor:pointer; margin-top:10px">Iniciar sesión</p>
+      <button class="btn" onclick="closeLogin()" style="margin-top:10px; width:100%">Cerrar</button>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
